@@ -9,10 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseTest {
-    LoginPage loginPage;
+    HomePage homePage;
      WebDriver driver;
      Map<String, Object> vars;
     JavascriptExecutor js;
+    AddRemovePage addRemovePage;
 
     @Before
     public void setUp() {
@@ -22,7 +23,7 @@ public class BaseTest {
         vars = new HashMap<String, Object>();
         driver.get("http://the-internet.herokuapp.com/");
         driver.manage().window().setSize(new Dimension(1792, 1010));
-        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
     }
 
     @After
