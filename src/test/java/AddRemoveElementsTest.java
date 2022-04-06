@@ -38,7 +38,6 @@ public class AddRemoveElementsTest extends BaseTest {
         assert (addRemovePage.getDeleteBtn().size() == 1);
         addRemovePage.removeElement();
         assert (addRemovePage.getDeleteBtn().size() == 0);
-
    /*driver.findElement(By.cssSelector(".added-manually")).click();
     {
       List<WebElement> elements = driver.findElements(By.cssSelector(".added-manually"));

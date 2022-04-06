@@ -1,28 +1,35 @@
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class UncheckedPositiveTest extends Page {
+import static com.codeborne.selenide.Selenide.$$;
 
-    public UncheckedPositiveTest(WebDriver driver) {
-        super(driver);
+public class CheckBoxesPage {
+
+    private static final By checkboxes = By.xpath("//form[@id='checkboxes']/input");
+
+
+    public void checkElement(int index) {
+        $$(checkboxes).get(index).click();
     }
 
-    @FindBy(css = "input:nth-child(3)")
-    private WebElement uncheckedCheckBox;
+    public SelenideElement isCheckboxSelected(int ind) { // при тесте мы выбираем сразу какой элемент нам нужен
 
-    public void checkElement() {
-        uncheckedCheckBox.click();
+        return $$(checkboxes).get(ind); // try catch exception
     }
 
-    @FindBy(css = "input:nth-child(3)")
-    private List<WebElement> checkBox2;
 
-    public List<WebElement> getCheckBox2() {
-        return checkBox2;
-    }
+
+
+
+
+
+
 
 
     /* public boolean getCheckBox02() {

@@ -4,11 +4,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class AddRemovePage extends Page {
-
-    public AddRemovePage(WebDriver driver) {
-        super(driver);
-    }
+public class AddRemovePage {
 
     @FindBy(css = "button")
     private WebElement addElementButton;
